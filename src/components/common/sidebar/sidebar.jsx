@@ -11,7 +11,7 @@ import {
 import { ChevronRight } from "lucide-react";
 
 const Aside_LINKS = [
-    { id: 1, text: "Tickets", path: "/tickets", Icon: TicketsIcon },
+    { id: 1, text: "Tickets", path: "/", Icon: TicketsIcon },
     { id: 2, text: "Dashboard", path: "/dashboard", Icon: DashboardIcon },
     { id: 3, text: "Analytics", path: "/analytics", Icon: AnalyticsIcon },
     { id: 4, text: "User Audit", path: "/user-audit", Icon: UserAuditIcon },

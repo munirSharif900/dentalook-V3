@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { LoginPage, Logo } from "../../assets/images";
+// import { LoginPage, Logo } from "../../assets/images";
 
 export default function Login() {
     const [isLogin, setIsLogin] = useState(true);
@@ -38,8 +38,8 @@ export default function Login() {
         if (!valid) return;
 
         if (isLogin) {
-            const correctEmail = "admin@chand.com";
-            const correctPassword = "123456";
+            const correctEmail = "admin@example.com";
+            const correctPassword = "123456789";
 
             if (email === correctEmail && password === correctPassword) {
                 localStorage.setItem("isLoggedIn", "true");
@@ -80,7 +80,7 @@ export default function Login() {
                 />
             </div> */}
             <div className="relative order-1 min-h-150 md:min-h-screen">
-                <img
+                {/* <img
                     src={LoginPage}
                     alt="login-image"
                     className="w-full h-auto rounded-xl"
@@ -89,7 +89,7 @@ export default function Login() {
                     loading="eager"
                     fetchpriority="high"
                     sizes="(max-width: 768px) 100vw, 720px"
-                />
+                /> */}
             </div>
 
             <div className="order-2 py-8">
@@ -100,13 +100,13 @@ export default function Login() {
                                 <img src={Logo} alt="logo" width={200} height={45} style={{ width: "200px", height: "45px" }} />
                             </div> */}
                             <div className="flex justify-center mb-6">
-                                <img
+                                {/* <img
                                     src={Logo}
                                     alt="logo"
                                     width={200}
                                     height={42}
                                     style={{ width: "200px", height: "auto" }}
-                                />
+                                /> */}
                             </div>
 
                             <h2 className="font-sans text-[26px] font-semibold text-[#003C51] mb-2">
