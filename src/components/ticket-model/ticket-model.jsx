@@ -70,7 +70,7 @@ export default function Ticket_Modal({ open, onClose, onSuccess }) {
       <div className="w-full max-w-2xl bg-white rounded-xl shadow-xl max-h-[90vh] flex flex-col">
         <div className="flex justify-between px-6 py-4 border-b border-gray-300">
           <h2 className="font-semibold">IT Tickets Form</h2>
-          <button onClick={onClose}>✕</button>
+          <button className="cursor-pointer" onClick={onClose}>✕</button>
         </div>
 
         <form

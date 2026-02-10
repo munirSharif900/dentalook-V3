@@ -55,7 +55,7 @@ export default function HeroHome() {
                 <div className="px-8 py-8 bg-white rounded-2xl border border-[#E2E8F0] mt-4">
                     <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-2">
                         {HERO_CARDS.map(card =>
-                            <button  onClick={() => setOpenForm(true)} className="px-4 py-4 bg-white rounded-lg hover:border-[#087BB3] border border-[#E2E8F0]" key={card.id}>
+                            <button  onClick={() => setOpenForm(true)} className="px-4 py-4 cursor-pointer bg-white rounded-lg hover:border-[#087BB3] border border-[#E2E8F0]" key={card.id}>
                                 <h3 className="text-base text-center text-[#131313] font-semibold pb-1">{card.title}</h3>
                                 <p className="text-xs text-center font-semibold text-[#757575]">{card.description}</p>
                             </button>
