@@ -47,7 +47,7 @@ export default function HeroHome() {
     ]
     return (
         <section>
-            <div className="py-8">
+            <div className="md:py-8">
                 <div className="px-8 py-8 bg-white rounded-2xl border border-[#E2E8F0]">
                     <h2 className="text-2xl text-black font-bold">Tickets Panel</h2>
                     <p className="text-sm font-normal text-[#757575]">Submit a ticket from one of the following categories</p>
