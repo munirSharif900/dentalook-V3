@@ -92,9 +92,9 @@ export default function FilterHeader({ title, subtitle, dropdowns }) {
 
     return (
         <div className={` z-50 pb-4  ${isCompact ? "sm:sticky sm:top-0 pt-0" : "pt-2 sm:pt-4"}`}>
-            <div className="px-8 flex flex-col sm:flex-row justify-between items-start gap-4 py-8 bg-white rounded-2xl border border-[#E2E8F0]">
-                <div className="md:min-w-37 lg:min-w-70 mb-4">
-                    <h2 className="text-2xl font-bold">{title}</h2>
+            <div className="ff_roboto px-8 flex flex-col sm:flex-row justify-between items-start gap-4 py-8 bg-white rounded-2xl border border-[#E2E8F0]">
+                <div className="md:min-w-40 lg:min-w-71 mb-4">      
+                    <h2 className="ff_roboto text-2xl font-bold">{title}</h2>
                     <p className="text-sm text-[#757575]">{subtitle}</p>
                 </div>
                 <div className="grid grid-cols-2 sm:flex items-center sm:justify-end flex-wrap gap-2">

@@ -5,12 +5,12 @@ import FilterHeader from "../../components/main-component/main-comonent";
 
 export default function Analytics() {
   
-   const DROPDOWN_BUTTONS = [
-        { id: 1, title: "Province", options: ["Punjab", "Sindh", "KPK", "Balochistan"], extraClass: "sm:max-w-[97px] grow" },
-        { id: 2, title: "Region", options: ["Region 1", "Region 2", "Region 3", "Region 4"], extraClass: "sm:max-w-22 grow" },
-        { id: 3, title: "Clinics", options: ["Clinic 1", "Clinic 2", "Clinic 3", "Clinic 4"], extraClass: "sm:max-w-[84px] grow" },
-        { id: 4, title: "Department", options: ["Department 1", "Department 2", "Department 3", "Department 4"], extraClass: "sm:max-w-[122px] grow" },
-        { id: 5, title: "Users", options: ["User 1", "User 2", "User 3", "User 4"], extraClass: "sm:max-w-20 grow" },
+     const DROPDOWN_BUTTONS = [
+        { id: 1, title: "Province", options: ["Punjab", "Sindh", "KPK", "Balochistan"], extraClass: "sm:w-[100px] grow" },
+        { id: 2, title: "Region", options: ["Region 1", "Region 2", "Region 3", "Region 4"], extraClass: "sm:w-23 grow" },
+        { id: 3, title: "Clinics", options: ["Clinic 1", "Clinic 2", "Clinic 3", "Clinic 4"], extraClass: "sm:w-[92px] grow" },
+        { id: 4, title: "Department", options: ["Department 1", "Department 2", "Department 3", "Department 4"], extraClass: "sm:w-[122px] grow" },
+        { id: 5, title: "Users", options: ["User 1", "User 2", "User 3", "User 4"], extraClass: "sm:w-22 grow" },
     ];
 
     const CARDS_DATA = [
@@ -158,8 +158,8 @@ export default function Analytics() {
     return (
         <section>    
             <FilterHeader
-                title="Service Desk Dashboard"
-                subtitle="Monitor ticket volume, progress, and performance"
+                title="Analytics"
+                subtitle="Monitor ticket volume, progress"
                 dropdowns={DROPDOWN_BUTTONS}
             />
 

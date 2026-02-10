@@ -12,7 +12,7 @@ export default function Header({ onMobileToggle }) {
             <div className="flex items-center gap-4 md:gap-25">
                 <button
                     onClick={onMobileToggle}
-                    className="md:hidden"
+                    className="md:hidden cursor-pointer"
                 ><HeaderTroggleIcon /></button>
                 <Link to={`/`}>
                     <img src={HeaderLogo} alt="logo" width={140} height={30} />

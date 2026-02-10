@@ -150,7 +150,7 @@ export default function ChartToggleCard({
                 <div className="flex max-w-31 border border-[#E2E8F0] rounded-lg overflow-hidden">
                     <button
                         onClick={() => setView("bar")}
-                        className={`px-4 py-1 text-sm ${view === "bar"
+                        className={`px-4 py-1 text-sm cursor-pointer ${view === "bar"
                             ? "bg-[#087BB3] text-white"
                             : "text-gray-500"
                             }`}
@@ -159,7 +159,7 @@ export default function ChartToggleCard({
                     </button>
                     <button
                         onClick={() => setView("pie")}
-                        className={`px-4 py-1 text-sm ${view === "pie"
+                        className={`px-4 py-1 text-sm cursor-pointer ${view === "pie"
                             ? "bg-[#087BB3] text-white"
                             : "text-gray-500"
                             }`}

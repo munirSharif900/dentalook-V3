@@ -99,7 +99,7 @@ export default function Province({ pageSize = 3, headding, description, data }) 
                     <button
                         disabled={page === 1}
                         onClick={() => setPage(p => Math.max(1, p - 1))}
-                        className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50"
+                        className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50 cursor-pointer"
                     >
                         ‹
                     </button>
@@ -108,7 +108,7 @@ export default function Province({ pageSize = 3, headding, description, data }) 
                         <button
                             key={i}
                             onClick={() => setPage(i + 1)}
-                            className={`px-3 py-1 rounded ${page === i + 1
+                            className={`px-3 py-1 rounded cursor-pointer ${page === i + 1
                                 ? "bg-[#087BB3] text-white"
                                 : "bg-gray-200"
                                 }`}
@@ -120,7 +120,7 @@ export default function Province({ pageSize = 3, headding, description, data }) 
                     <button
                         disabled={page === totalPages || totalPages === 0}
                         onClick={() => setPage(p => Math.min(totalPages, p + 1))}
-                        className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50"
+                        className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50 cursor-pointer"
                     >
                         ›
                     </button>

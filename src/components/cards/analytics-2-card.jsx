@@ -69,10 +69,10 @@ export default function TicketsByStageChart({
                         ))}
                     </div>
 
-                    <div className="flex border rounded-lg overflow-hidden">
+                    <div className="flex border border-[#EFEFEF] rounded-lg  overflow-hidden">
                         <button
                             onClick={() => setView("bar")}
-                            className={`px-4 py-1 ${view === "bar"
+                            className={`px-4 py-1 cursor-pointer ${view === "bar"
                                     ? "bg-[#087BB3] text-white"
                                     : "text-[#64748B]"
                                 }`}
@@ -82,7 +82,7 @@ export default function TicketsByStageChart({
 
                         <button
                             onClick={() => setView("line")}
-                            className={`px-4 py-1 ${view === "line"
+                            className={`px-4 py-1 cursor-pointer ${view === "line"
                                     ? "bg-[#087BB3] text-white"
                                     : "text-[#64748B]"
                                 }`}

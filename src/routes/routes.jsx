@@ -64,7 +64,7 @@ export default function MyRoutes() {
                      <Route path="/analytics" element={<Analytics />} />
                      <Route path="/user-audit" element={<UserAudit />} />
                      <Route path="/leaderboard" element={<Leaderboard />} />
-                     <Route path="/settings" element={<Setting />} />
+                     <Route path="/setting" element={<Setting />} />
                   </Route>
                </Routes>
             </BrowserRouter>
