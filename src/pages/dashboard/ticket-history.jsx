@@ -51,14 +51,12 @@ export default function TicketHistory() {
                                             : card.button === "Assigned - In Progress"
                                                 ? "text-[#FF5C00] border border-[#FF5C00] bg-yellow-50"
                                                 : "text-[#087BB3] border border-[#087BB3] bg-blue-50"
-                                    }
-                `}
+                                    }`}
                             >
                                 {card.button}
                             </span>
                         )}
                     </div>
-
                     <div className="flex items-center gap-1">
                         <img
                             src={ProfileIcon}

@@ -60,8 +60,6 @@ export default function Sidebar({
                         }`} />
             </button>
 
-
-
             <nav className=" p-4">
                 <ul>
                     {Aside_LINKS.map(link => (
@@ -82,7 +80,7 @@ export default function Sidebar({
                                 }
                             >
 
-                                <link.Icon className="w-4 h-4 text-current shrink-0" />
+                              <span><link.Icon className="w-4 h-4 text-current shrink-0" /></span>
 
                                 <span
                                     className={`

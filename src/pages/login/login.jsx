@@ -119,8 +119,7 @@ export default function Login() {
                             </p>
                         </div>
 
-                        <form onSubmit={handleSubmit} className="grid gap-6
-">
+                        <form onSubmit={handleSubmit} className="grid gap-6">
                             <div>
                                 <label className="text-[#2D3748] text-sm font-normal mb-1">
                                     Email
@@ -218,7 +217,6 @@ export default function Login() {
                                 {isLogin ? "Sign Up" : "Sign In"}
                             </button>
                         </div>
-
                     </div>
                 </main>
             </div>

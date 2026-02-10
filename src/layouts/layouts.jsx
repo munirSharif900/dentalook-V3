@@ -12,13 +12,9 @@ const DashboardLayout = () => {
     
     <div className="h-screen flex flex-col">
 
-    
       <Header onMobileToggle={() => setMobileOpen(true)}/>
-
    
       <div className="flex flex-1 overflow-hidden">
-
-        
          <Sidebar
           mobileOpen={mobileOpen}
           onMobileClose={() => setMobileOpen(false)}
@@ -26,11 +22,10 @@ const DashboardLayout = () => {
           setCollapsed={setCollapsed}
         />
 
-    
         <main className="flex-1 p-4 bg-gray-100 overflow-y-auto">
           <Outlet />
         </main>
-
+        
       </div>
     </div>
   )

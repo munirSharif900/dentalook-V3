@@ -187,7 +187,6 @@ export default function Analytics() {
                     />
                 ))}
             </div>
-
         </section >
     );
 }

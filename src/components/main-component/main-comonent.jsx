@@ -94,7 +94,7 @@ export default function FilterHeader({ title, subtitle, dropdowns }) {
     return (
         <div className={` z-50 pb-4  ${isCompact ? "sm:sticky sm:top-0 pt-0" : "pt-2 sm:pt-4"}`}>
             <div className="ff_roboto px-8 flex flex-col sm:flex-row justify-between items-start gap-4 py-8 bg-white rounded-2xl border border-[#E2E8F0]">
-                <div className="md:min-w-40 lg:min-w-71 mb-4">      
+                <div className="md:min-w-40 lg:min-w-71 mb-4">
                     <h2 className="ff_roboto text-2xl font-bold">{title}</h2>
                     <p className="text-sm text-[#757575]">{subtitle}</p>
                 </div>
@@ -107,7 +107,6 @@ export default function FilterHeader({ title, subtitle, dropdowns }) {
 
                                 <button
                                     onClick={() => toggleOpen(id)}
-
                                     className={`
                                           inline-flex items-center justify-between gap-2
                                            px-3 py-2 border border-[#E0E0E0] rounded-3xl
@@ -169,10 +168,9 @@ export default function FilterHeader({ title, subtitle, dropdowns }) {
                             className="flex items-center justify- gap-2 bg-white cursor-pointer px-3 py-2 border border-[#E0E0E0] rounded-3xl w-full"
                             onClick={() => setShowPicker(!showPicker)}
                         >
-                            <CalenderIcon />
+                            <span><CalenderIcon /></span>
                             <span className="text-sm font-medium text-gray-500">{formatDateRange(state[0].startDate, state[0].endDate)}</span>
-
-                            <DownArrowIcon />
+                            <span> <DownArrowIcon /></span>
                         </div>
 
                         {showPicker && (
@@ -187,12 +185,12 @@ export default function FilterHeader({ title, subtitle, dropdowns }) {
                                     rangeColors={["#087BB3"]}
                                 />
                                 <div className="flex justify-end mt-2">
-                                    <Button className="px-2 py-1! bg-[#087BB3] text-white rounded hover:bg-[#087BB3]" text=" Apply" onClick={() => setShowPicker(false)}/>
+                                    <Button className="px-2 py-1! bg-[#087BB3] text-white rounded hover:bg-[#087BB3]" text=" Apply" onClick={() => setShowPicker(false)} />
                                 </div>
                             </div>
                         )}
                     </div>
-                    <Button className="px-1 text-sm text-[#1976D2] hover:bg-blue-50 whitespace-nowrap" text="Clear Filters"/>
+                    <Button className="px-1 text-sm text-[#1976D2] hover:bg-blue-50 whitespace-nowrap" text="Clear Filters" />
                 </div>
             </div>
         </div>

@@ -15,7 +15,6 @@ export default function Pill({ text, active, onClick }) {
   );
 }
 
-/* ========= INPUT ========= */
 export function Input({
   label,
   required,
@@ -49,7 +48,6 @@ export function Input({
   );
 }
 
-/* ========= TEXTAREA ========= */
 export function Textarea({
   label,
   required,
@@ -85,7 +83,6 @@ export function Textarea({
 
 import { useState } from "react";
 import Button from "../button/button";
-
 export function FileUpload({ label }) {
   const [file, setFile] = useState(null);
 
@@ -95,14 +92,13 @@ export function FileUpload({ label }) {
 
   return (
     <div className="w-full">
-      {/* Label */}
+
       {label && (
         <label className="block text-sm font-medium text-gray-700 mb-1">
           {label}
         </label>
       )}
 
-      {/* Upload Box */}
       <div className="flex items-center gap-3">
         <label className="flex items-center w-full justify-center px-4 py-9 rounded-lg border border-dashed border-gray-300 cursor-pointer hover:bg-gray-50 transition">
           <input

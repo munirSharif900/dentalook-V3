@@ -381,7 +381,6 @@ export default function UserAudit() {
                                         />
                                     </td>
                                     <td className="px-6 py-4 text-[#333]">{emp.id}</td>
-
                                     <td className="flex items-center gap-3 px-6 py-4">
                                         <img
                                             src={ProfileIcon}
@@ -389,7 +388,6 @@ export default function UserAudit() {
                                         />
                                         <span className="font-medium text-[#333]">{emp.name}</span>
                                     </td>
-
                                     <td className="px-6 py-4 text-[#333]">{emp.role}</td>
                                     <td className="px-6 py-4 text-[#333]">{emp.region}</td>
                                     <td className="px-6 py-4 text-[#333]">{emp.clinic}</td>

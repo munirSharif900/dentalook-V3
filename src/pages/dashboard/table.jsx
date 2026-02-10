@@ -42,57 +42,46 @@ export default function TableComponents({ title, count, data, bgColor = "#2F80ED
                                     key={i}
                                     className="border-b border-[#EDEDED] last:border-none text-center align-middle cursor-pointer hover:bg-gray-50"
                                     onClick={() => onRowClick(item)}
-
                                 >
                                     <td className="p-4 flex gap-2 items-center text-[#131313] text-xs font-medium">
-                                       <span><item.icon/></span> {item.name}
-                                    
-                                    </td>
+                                        <span><item.icon /></span> {item.name}
 
+                                    </td>
                                     <td className="text-[#131313] text-xs font-medium">
                                         {item.date}
                                     </td>
-
                                     <td className="text-[#131313] text-xs font-medium">
                                         {item.rm}
                                     </td>
-
                                     <td className="text-[#131313] text-xs font-medium">
                                         {item.dlpm}
                                     </td>
-
                                     <td className="flex justify-center items-center gap-1 text-[#131313] text-xs font-medium">
                                         <span><HrIcon /></span>
                                         {item.dept}
                                     </td>
-
-                                    <td>
-                                        <div className="flex justify-center items-center gap-1">
-                                            <img
-                                                src={ProfileIcon}
-                                                className="w-6 h-6 rounded-full"
-                                            />
-                                            <span className="bg-gray-100 text-xs px-2 py-1 rounded-full">
-                                                {item.assignee}
-                                            </span>
-                                            <span className="border border-[#BDBDBD] rounded-full w-6 h-6 flex items-center justify-center text-xs">
-                                                +
-                                            </span>
-                                        </div>
+                                    <td className="flex justify-center items-center gap-1">
+                                        <img
+                                            src={ProfileIcon}
+                                            className="w-6 h-6 rounded-full"
+                                        />
+                                        <span className="bg-gray-100 text-xs px-2 py-1 rounded-full">
+                                            {item.assignee}
+                                        </span>
+                                        <span className="border border-[#BDBDBD] rounded-full w-6 h-6 flex items-center justify-center text-xs">
+                                            +
+                                        </span>
                                     </td>
-
                                     <td className="flex justify-center items-center gap-1 text-[#131313] text-xs font-medium">
-                                       <span> <TimeIcon /></span>
+                                        <span> <TimeIcon /></span>
                                         {item.deadline}
                                     </td>
-
                                     <td className="text-[#131313] text-xs font-medium">
                                         {item.days}
                                     </td>
                                 </tr>
                             ))}
                         </tbody>
-
                     </table>
                 </div>
             )}

@@ -11,8 +11,7 @@ export default function TicketReveiw() {
                     <ArtBoardIcon2/>
                     <ArtBoardIcon3/>
                     <ArtBoardIcon4/>
-                    <ArtBoardIcon5/>
-                  
+                    <ArtBoardIcon5/>     
                 </div>
             </div>
             <div>

@@ -89,10 +89,9 @@ export default function Province({ pageSize = 3, headding, description, data }) 
 
             <div className="flex justify-between items-center mt-4">
 
-                <p className="text-sm text-gray-500">
+                <span className="text-sm text-gray-500">
                     Showing {start + 1} to {Math.min(start + pageSize, sorted.length)} of {sorted.length}
-
-                </p>
+                </span>
 
                 <div className="flex gap-1">
 
