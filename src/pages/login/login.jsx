@@ -70,7 +70,7 @@ export default function Login() {
     return (
         <div className="grid md:grid-cols-2 items-center  h-full overflow-x-hidden overflow-y-hidden ">
             <div className="relative order-1 min-h-150 md:min-h-screen">
-                <img
+                {/* <img
                     src={LogoImage}
                     alt="login-image"
                     className="max-w-full rounded-br-4xl object-contain"
@@ -79,22 +79,21 @@ export default function Login() {
                     loading="eager"
                     fetchpriority="high"
                     sizes="(max-width: 768px) 100vw, 720px"
-                />
+                /> */}
             </div>
 
             <div className="order-2 py-8">
                 <main className="max-w-125 mx-auto px-4 flex flex-col justify-center h-full">
                     <div className="h-fit border p-5 border-[#E2E8F0] rounded-xl shadow">
                         <div className="mb-6 text-center">
-                            <div className="flex justify-center mb-6">
+                            {/* <div className="flex justify-center mb-6">
                                 <img
                                     src={HeaderLogo}
                                     alt="logo"
-                                    width={200}
-                                    height={42}
-                                    style={{ width: "200px", height: "auto" }}
+                                    width={140}
+                                    height={30}
                                 />
-                            </div>
+                            </div> */}
 
                             <h2 className="font-sans text-[26px] font-semibold text-[#003C51] mb-2">
                                 {isLogin ? "Welcome to the Service Desk Portal" : "Create an Account"}
