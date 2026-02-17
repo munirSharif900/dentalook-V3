@@ -19,6 +19,9 @@ export default function Ticket_Modal({ open, onClose, onSuccess }) {
     );
   };
 
+  const AssistanceOne = ["General", "Software", "Hardware"];
+  const AssistanceTwo = ["Imaging", "Computer", "Phones", "X-Rays", "Printers", "Scanners"];
+
   const toggleIssue = (value) => {
     setIssue((prev) =>
       prev.includes(value)
@@ -61,7 +64,7 @@ export default function Ticket_Modal({ open, onClose, onSuccess }) {
       description,
     });
 
-    onSuccess(); 
+    onSuccess();
   };
 
 
@@ -84,7 +87,7 @@ export default function Ticket_Modal({ open, onClose, onSuccess }) {
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-              {["General", "Software", "Hardware"].map((item) => (
+              {AssistanceOne.map((item) => (
                 <Pill
                   key={item}
                   text={item}
@@ -107,7 +110,7 @@ export default function Ticket_Modal({ open, onClose, onSuccess }) {
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-              {["Imaging", "Computer", "Phones", "X-Rays", "Printers", "Scanners"].map((item) => (
+              {AssistanceTwo.map((item) => (
                 <Pill
                   key={item}
                   text={item}
@@ -156,8 +159,8 @@ export default function Ticket_Modal({ open, onClose, onSuccess }) {
           </div>
 
           <div className="grid grid-cols-2 gap-3 pt-4">
-            <Button type="button" onClick={onClose} className="border border-gray-300 px-2 rounded!"  text="Cancel"/>    
-            <Button type="submit" className="bg-[#087BB3] text-white px-2 rounded!" text="Submit"/>
+            <Button type="button" onClick={onClose} className="border border-gray-300 px-2 rounded!" text="Cancel" />
+            <Button type="submit" className="bg-[#087BB3] text-white px-2 rounded!" text="Submit" />
           </div>
 
         </form>

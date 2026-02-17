@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TicketModal from "../../components/ticket-model/ticket-model";
 import TicketSuccessModal from "../../components/ticket-model/ticket-model-sucess";
+import PopupWithTabs from "../../components/ticket-model/mean-model";
 
 export default function HeroHome() {
 
@@ -10,63 +11,52 @@ export default function HeroHome() {
     const HERO_CARDS = [
         {
             id: 1,
-            title: 'Submit IT Tickets',
-            description: 'Information Technology Tickets',
+            title: 'Dental Equipment',
 
         },
         {
             id: 2,
-            title: 'Submit Payable Tickets',
-            description: 'payable Tickets',
+            title: 'Clinic Renovation and Expansion',
 
         },
         {
             id: 3,
-            title: 'Submit Payroll Tickets',
-            description: 'Payroll Tickets',
+            title: 'Office Equipment',
 
         },
         {
             id: 4,
-            title: 'Submit HR Tickets',
-            description: 'HR Tickets',
+            title: 'Specialty Dental Supplies',
 
         },
-        {
-            id: 5,
-            title: 'Submit EOD Tickets',
-            description: 'EOD Tickets',
 
-        },
-        {
-            id: 6,
-            title: 'Submit Logistics Tickets',
-            description: 'Logistics Tickets',
-
-        },
     ]
     return (
         <section>
             <div className="md:py-8">
                 <div className="px-8 py-8 bg-white rounded-2xl border border-[#E2E8F0]">
-                    <h2 className="text-2xl text-black font-bold">Tickets Panel</h2>
-                    <p className="text-sm font-normal text-[#757575]">Submit a ticket from one of the following categories</p>
+                    <h2 className="text-2xl text-black font-bold">Capital Expenditure Request Workflow</h2>
+                    <p className="text-sm font-normal text-[#757575]">Use this form to initiate a new capital expenditure request (CAPEX Request Workflow)</p>
                 </div>
                 <div className="px-8 py-8 bg-white rounded-2xl border border-[#E2E8F0] mt-4">
-                    <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-2">
+                    <div className="grid sm:grid-cols-2 gap-2">
                         {HERO_CARDS.map(card =>
-                            <button  onClick={() => setOpenForm(true)} className="px-4 py-4 cursor-pointer bg-white rounded-lg hover:border-[#087BB3] border border-[#E2E8F0]" key={card.id}>
-                                <h3 className="text-base text-center text-[#131313] font-semibold pb-1">{card.title}</h3>
-                                <p className="text-xs text-center font-semibold text-[#757575]">{card.description}</p>
+                            <button onClick={() => setOpenForm(true)} className="px-4 py-4 cursor-pointer bg-white rounded-lg hover:border-[#087BB3] border border-[#E2E8F0]" key={card.id}>
+                                <h3 className="text-base text-center text-[#131313] font-semibold">{card.title}</h3>
+                                {/* <p className="text-xs text-center font-semibold text-[#757575]">{card.description}</p> */}
                             </button>
                         )}
-                        <TicketModal
+                        {/* <TicketModal
                             open={openForm}
                             onClose={() => setOpenForm(false)}
                             onSuccess={() => {
                                 setOpenForm(false);
                                 setOpenSuccess(true);
                             }}
+                        /> */}
+                        <PopupWithTabs
+                            open={openForm}
+                            onClose={() => setOpenForm(false)}
                         />
 
                         <TicketSuccessModal

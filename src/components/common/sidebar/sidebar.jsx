@@ -11,7 +11,7 @@ import {
 import { ChevronRight } from "lucide-react";
 
 const Aside_LINKS = [
-    { id: 1, text: "Tickets", path: "/", Icon: TicketsIcon },
+    { id: 1, text: "Capex Requests", path: "/", Icon: TicketsIcon },
     { id: 2, text: "Dashboard", path: "/dashboard", Icon: DashboardIcon },
     { id: 3, text: "Analytics", path: "/analytics", Icon: AnalyticsIcon },
     { id: 4, text: "User Audit", path: "/user-audit", Icon: UserAuditIcon },
@@ -29,7 +29,7 @@ export default function Sidebar({
     return (
         <aside
             className={`
-                              fixed md:static z-99
+                              fixed md:static z-99 border-e border-[#E2E8F0]
                               top-0 left-0 h-full bg-white
                               transition-transform md:transition-all duration-300
                               ${mobileOpen ? "translate-x-0" : "-translate-x-full"}

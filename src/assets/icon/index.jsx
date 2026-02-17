@@ -21,22 +21,11 @@ export const DoubleArrowIcon = () => (
 );
 
 export const TicketsIcon = (props) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="14"
-    height="14"
-    viewBox="0 0 14 14"
-    fill="none"
-    {...props}
-  >
-    <path
-      d="M1 7H7M7 7H13M7 7V13M7 7V1"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" {...props}>
+  <path d="M7.5 10H12.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M10 7.5L10 12.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M3.75 7.08333C3.75 5.24238 5.24238 3.75 7.08333 3.75H12.9167C14.7576 3.75 16.25 5.24238 16.25 7.08333V12.9167C16.25 14.7576 14.7576 16.25 12.9167 16.25H7.08333C5.24238 16.25 3.75 14.7576 3.75 12.9167V7.08333Z" stroke="currentColor" stroke-width="1.25"/>
+</svg>
 );
 
 
