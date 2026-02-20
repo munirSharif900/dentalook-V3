@@ -34,7 +34,7 @@ export default function Sidebar({
                               transition-transform md:transition-all duration-300
                               ${mobileOpen ? "translate-x-0" : "-translate-x-full"}
                               md:translate-x-0
-                              ${collapsed ? "md:w-22" : "md:w-64"}
+                              ${collapsed ? "md:w-20" : "md:w-64"}
                               w-64
                            `}>
             <button
@@ -72,7 +72,7 @@ export default function Sidebar({
                                     }
                                 }}
                                 className={({ isActive }) =>
-                                    `group flex items-center gap-3 px-4 py-3 rounded-lg transition-all
+                                    `group flex items-center  ${collapsed ? " px-3 justify-center" : "px-4"}  gap-3  px-4 py-3 rounded-lg transition-all
                                       ${isActive
                                         ? "bg-[#087BB3] text-white"
                                         : "text-[#63716E] hover:bg-gray-200 hover:text-gray-900"
@@ -86,8 +86,8 @@ export default function Sidebar({
                                     className={`
                                         transition-all duration-300 whitespace-nowrap text-sm font-medium
                                          ${collapsed
-                                            ? "opacity-0 w-0 overflow-hidden"
-                                            : "opacity-100 w-auto"}
+                                            ? "opacity-0 hidden w-0 overflow-hidden"
+                                            : "opacity-100 flex w-auto"}
                                         `}
                                 >
                                     {link.text}
