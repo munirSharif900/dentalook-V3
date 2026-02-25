@@ -32,7 +32,8 @@ const REQUEST_TYPES = [
     },
 ];
 
-export default function CAPEXPopup({ onClose, onOpenCatalog, onCloseCatalog }) {
+export default function CAPEXPopup({ onClose, onOpenCatalog, onCloseCatalog, onOpenPreview }) {
+    console.log("CAPEXPopup mounted, onOpenPreview=", onOpenPreview);
 
     const validationSchema = Yup.object({
         requestType: Yup.string().required("Request type is required"),
@@ -49,10 +50,16 @@ export default function CAPEXPopup({ onClose, onOpenCatalog, onCloseCatalog }) {
         setAddedItems(prev => [...prev, item]);
     };
 
-    const [activeTypeId, setActiveTypeId] = useState(1);
+    // remove item at specific index without affecting other rows
+    const handleRemoveItem = (indexToRemove) => {
+        setAddedItems(prev => prev.filter((_, i) => i !== indexToRemove));
+    };
+
+    const [activeTypeId, setActiveTypeId] = useState(3);
     const activeType = REQUEST_TYPES.find((type) => type.id === activeTypeId);
 
-    const [selectedVendor, setSelectedVendor] = useState("dl");
+
+    const [selectedVendor, setSelectedVendor] = useState("");
 
 
     const [activeId, setActiveId] = useState(1);
@@ -73,7 +80,7 @@ export default function CAPEXPopup({ onClose, onOpenCatalog, onCloseCatalog }) {
             </div>
             <Formik
                 initialValues={{
-                    requestType: "",
+                    requestType: 3,
                     item: "",
                     reason: "",
                     urgency: "",
@@ -227,63 +234,77 @@ export default function CAPEXPopup({ onClose, onOpenCatalog, onCloseCatalog }) {
                                         )}
                                     </div>
                                 </div>
+                                {activeType.name !== "Repair" && (
+                                    <div>
 
-                                <h3 className="text-sm font-medium text-[#63716E] mb-2">Vendor Selection</h3>
+                                        <h3 className="text-sm font-medium text-[#63716E] mb-2">Vendor Selection</h3>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 mb-4 md:mb-8">
-                                    <div
-                                        onClick={() => {
-                                            onOpenCatalog(true, handleAddItem);
-                                            setSelectedVendor("own");
-                                        }}
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 mb-4 md:mb-8">
+                                            <div
+                                                onClick={() => {
+                                                    onOpenCatalog(true, handleAddItem);
+                                                    setSelectedVendor("own");
+                                                }}
 
-                                        className={`cursor-pointer rounded-lg px-3 py-2 border transition
-                                 ${selectedVendor === "own"
-                                                ? "bg-[rgba(8,123,179,0.05)] text-[#087BB3] border-[#087BB3]"
-                                                : "bg-[#F7F7F7] border-transparent"
-                                            }`}
-                                    >
-                                        <p className="font-medium text-sm  mb-2.5">
-                                            DL Preferred Vendor
-                                        </p>
-                                        <p className="text-[#203430] text-xs font-normal">
-                                            Use our standardized vendor and pricing from the reference quotation
-                                        </p>
+                                                className={`cursor-pointer rounded-lg px-3 py-2 border transition
+                                     ${selectedVendor === "own"
+                                                        ? "bg-[rgba(8,123,179,0.05)] text-[#087BB3] border-[#087BB3]"
+                                                        : "bg-[#F7F7F7] border-transparent"
+                                                    }`}
+                                            >
+                                                <p className="font-medium text-sm  mb-2.5">
+                                                    DL Preferred Vendor
+                                                </p>
+                                                <p className="text-[#203430] text-xs font-normal">
+                                                    Use our standardized vendor and pricing from the reference quotation
+                                                </p>
+                                            </div>
+
+                                            <div
+                                                onClick={() => {
+                                                    setSelectedVendor("dl");
+                                                    onCloseCatalog(false);
+                                                }
+
+                                                }
+                                                className={`cursor-pointer rounded-lg px-3 py-2 border transition
+                                     ${selectedVendor === "dl"
+                                                        ? "bg-[rgba(8,123,179,0.05)] text-[#087BB3] border-[#087BB3]"
+                                                        : "bg-[#F7F7F7] border-transparent"
+                                                    }`}
+                                            >
+                                                <p className="font-medium text-sm  mb-2.5">
+                                                    Use my own vendor
+                                                </p>
+                                                <p className="text-[#203430] text-xs font-normal">
+                                                    Choose a different vendor based on your own quotation(s)
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
+                                )}
 
-                                    <div
-                                        onClick={() => {
-                                            setSelectedVendor("dl");
-                                            onCloseCatalog(false);
-                                        }
 
-                                        }
-                                        className={`cursor-pointer rounded-lg px-3 py-2 border transition
-                                 ${selectedVendor === "dl"
-                                                ? "bg-[rgba(8,123,179,0.05)] text-[#087BB3] border-[#087BB3]"
-                                                : "bg-[#F7F7F7] border-transparent"
-                                            }`}
-                                    >
-                                        <p className="font-medium text-sm  mb-2.5">
-                                            Use my own vendor
-                                        </p>
-                                        <p className="text-[#203430] text-xs font-normal">
-                                            Choose a different vendor based on your own quotation(s)
-                                        </p>
-                                    </div>
-                                </div>
 
                                 <h4 className="text-sm font-medium text-[#63716E] mb-4">
                                     Quotations details and suggested choices
                                 </h4>
 
-                                {selectedVendor === "dl" && (
-                                    <SelcatedVendor addedItems={addedItems} />
-                                )}
 
-                                {selectedVendor === "own" && (
+                                <SelcatedVendor
+                                    addedItems={addedItems}
+                                    onRemove={handleRemoveItem}
+                                    onPreview={onOpenPreview}
+                                />
+                                {/* console log for inspection */}
+                                {false && console.log("CAPEXPopup passing onOpenPreview", onOpenPreview)}
+
+
+                                {/* {selectedVendor === "dl" && (
                                     <SelcatedVendor addedItems={addedItems} />
-                                )}
+                                )} */}
+
+
 
                                 <div className="flex justify-end">
                                     <button

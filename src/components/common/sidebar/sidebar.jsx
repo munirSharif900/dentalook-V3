@@ -46,7 +46,7 @@ export default function Sidebar({
                     }
                 }}
                 className={`
-                               absolute top-6 transition-all duration-300
+                               absolute top-1 transition-all duration-300
                                w-6 h-6 bg-white border border-gray-300 rounded-full
                                items-center justify-center shadow cursor-pointer
                                hidden md:flex -right-3
