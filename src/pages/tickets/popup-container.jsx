@@ -7,6 +7,7 @@ export default function PopupContainer({ onClose }) {
   const [showCatalog, setShowCatalog] = useState(false);
   const [onAddItemCallback, setOnAddItemCallback] = useState(null);
   const [previewFile, setPreviewFile] = useState(null);
+  const [previewMode, setPreviewMode] = useState("docked");
 
   const openPreview = (file) => {
     if (!file) return;
@@ -15,8 +16,12 @@ export default function PopupContainer({ onClose }) {
     setPreviewFile(file);
   };
 
-  const closePreview = () => setPreviewFile(null);
-
+  // const closePreview = () => setPreviewFile(null);
+  const closePreview = () => {
+    setPreviewMode("docked");
+    setPreviewFile(null);
+  };
+  
   const handleClose = () => {
     setShowCatalog(false);
     setPreviewFile(null);
@@ -26,7 +31,7 @@ export default function PopupContainer({ onClose }) {
   return (
     <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-100">
       <div className="flex md:flex-row flex-col gap-2.5 px-4">
-
+        {/* 
         <CAPEXPopup
           onClose={handleClose}
           onOpenCatalog={(show, callback) => {
@@ -38,7 +43,21 @@ export default function PopupContainer({ onClose }) {
           }}
           onCloseCatalog={() => setShowCatalog(false)}
           onOpenPreview={openPreview}
-        />
+        /> */}
+        {previewMode !== "expanded" && (
+          <CAPEXPopup
+            onClose={handleClose}
+            onOpenCatalog={(show, callback) => {
+              setShowCatalog(show);
+              setOnAddItemCallback(() => callback);
+              if (show) {
+                setPreviewFile(null);
+              }
+            }}
+            onCloseCatalog={() => setShowCatalog(false)}
+            onOpenPreview={openPreview}
+          />
+        )}
 
         {showCatalog && !previewFile && (
           <DLCatalogPanel
@@ -47,8 +66,16 @@ export default function PopupContainer({ onClose }) {
           />
         )}
 
-        {previewFile && (
+        {/* {previewFile && (
           <PreviewPanel file={previewFile} onClose={closePreview} />
+        )} */}
+        {previewFile && (
+          <PreviewPanel
+            file={previewFile}
+            onClose={closePreview}
+            mode={previewMode}
+            setMode={setPreviewMode}
+          />
         )}
 
       </div>
